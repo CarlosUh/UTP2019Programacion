@@ -9,9 +9,10 @@ class TareaController extends Controller
 	
 	public function mostrar(){
 		$cantidad=Tarea::count();
-		//$tareas=Tarea::All();
+		$tareas=Tarea::All();
 		return view('tareas.listado',
-			['existencias'=>$cantidad]
+			['existencias'=>$cantidad,
+			'tareas'=>$tareas]
 		);
 	}
 	

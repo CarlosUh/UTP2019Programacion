@@ -10,16 +10,13 @@
     <th>Descripcion</th> 
     <th>Estatus</th>
   </tr>
+  @foreach($tareas as $tarea)
   <tr>
-    <td>Jill</td>
-    <td>Smith</td> 
-    <td>50</td>
+    <td>{{$tarea->name}}</td>
+    <td>{{$tarea->description}}</td> 
+    <td>{{$tarea->estatus}}</td>
   </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td> 
-    <td>94</td>
-  </tr>
+  @endforeach
 </table>
 </body>
 </html>
