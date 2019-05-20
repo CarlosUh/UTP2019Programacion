@@ -9,6 +9,6 @@ Inicializar Laravel
 	- php artisan make:migration createTarea_table
 * correr migracion
 	- php artisan migrate
-* Creacion de la vista y controlador
+* Creacion de la vista y controlador, configuracion de rutas
 * insertar
 * consultar

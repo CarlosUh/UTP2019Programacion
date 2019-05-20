@@ -11,4 +11,18 @@
 |
 */
 
-Route::get('/', 'TareaController@mostrar');
+Route::get('/', 'TareaController@mostrar')
+	->name("home");
+Route::get('/tarea/form', 'TareaController@form')
+	->name("tarea.formulario");
+Route::get('/tareas/nuevo', 'TareaController@guardar')
+	->name("tarea.guardar");
+
+
+
+
+
+
+
+
+

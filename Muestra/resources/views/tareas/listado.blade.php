@@ -3,6 +3,7 @@
 	<title>Prueba</title>
 </head>
 <body>
+<a href="{{ route('tarea.formulario') }}">Registrar nueva tarea</a>
 <h1> Existen {{ $existencias}}</h1>
 <table style="width:100%">
   <tr>
