@@ -5,6 +5,8 @@ Inicializar Laravel
 	
 * laravel new Muestra
 * crear modelo Tarea
+* Iniciar servidor:
+	- php artisan serve
 * creat migracion
 	- php artisan make:migration createTarea_table
 * correr migracion
@@ -14,7 +16,7 @@ Inicializar Laravel
 * consultar
 * Crear migracion para agregar usuario
 	- php artisan make:migration addColumnUsuario_table
-* Acualizar base de datos
+* Actualizar base de datos
 	- php artisan migrate
 * Deshacer cambios
 	- php artisan migrate:rollback

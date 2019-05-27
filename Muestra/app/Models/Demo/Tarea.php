@@ -14,7 +14,7 @@ class Tarea extends Model
      * @var array
      */
     protected $fillable = [
-        'tareaid','name', 'description', 'estatus',
+        'tareaid','name', 'description', 'estatus','usuario'
     ];
 
     /**

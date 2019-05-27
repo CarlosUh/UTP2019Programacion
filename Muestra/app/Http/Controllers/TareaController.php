@@ -26,6 +26,7 @@ class TareaController extends Controller
 		$tarea->name=$request->name;
 		$tarea->description=$request->description;
 		$tarea->estatus=$request->estatus;
+		$tarea->usuario='CarlosUh'; 
 		$tarea->save();
 		return redirect()->route("home");
 	}
