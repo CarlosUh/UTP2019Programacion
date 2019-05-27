@@ -1,8 +1,5 @@
-<html>
-<head>
-	<title>Prueba</title>
-</head>
-<body>
+@extends('Layout.principal')
+@section('cuerpo')
 <a href="{{ route('tarea.formulario') }}">Registrar nueva tarea</a>
 <h1> Existen {{ $existencias}}</h1>
 <table style="width:100%">
@@ -19,5 +16,9 @@
   </tr>
   @endforeach
 </table>
-</body>
-</html>
+@endsection
+
+@section('up')
+	@include('tareas.tarea')
+@endsection
+
