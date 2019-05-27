@@ -13,10 +13,10 @@ Inicializar Laravel
 * insertar
 * consultar
 * Crear migracion para agregar usuario
-	php artisan make:migration addColumnUsuario_table
+	- php artisan make:migration addColumnUsuario_table
 * Acualizar base de datos
-	php artisan migrate
+	- php artisan migrate
 * Deshacer cambios
-	php artisan migrate:rollback
+	- php artisan migrate:rollback
 * Rehacer cambios
-	php artisan migrate
+	- php artisan migrate
