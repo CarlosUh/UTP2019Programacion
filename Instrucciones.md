@@ -22,3 +22,10 @@ Inicializar Laravel
 	- php artisan migrate:rollback
 * Rehacer cambios
 	- php artisan migrate
+	
+Instalacion de adminLTE
+==============
+* Instalacion
+	- composer global require "acacha/adminlte-laravel-installer"
+	- adminlte-laravel install
+
