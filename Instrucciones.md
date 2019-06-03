@@ -28,4 +28,16 @@ Instalacion de adminLTE
 * Instalacion
 	- composer global require "acacha/adminlte-laravel-installer"
 	- adminlte-laravel install
+	
+Instalacion de Laravel CRUD Generator
+==============
+* Instalacion Crud Generator
+	- composer require appzcoder/crud-generator --dev
+	- php artisan vendor:publish --provider="Appzcoder\CrudGenerator\CrudGeneratorServiceProvider"
+	
+* Utilizar Crud Generator
+	- Crear archivo json en crudg/tareas.json
+	- php artisan crud:generate Tareas --fields_from_file="crudg/tareas.json"  --form-helper=html
+	- php artisan migrate
+
 
