@@ -1,4 +1,4 @@
-@extends('Layout.principal')
+@extends('Layout.ecommerce')
 @section('cuerpo')
 <a href="{{ route('tarea.formulario') }}">Registrar nueva tarea</a>
 <h1> Existen {{ $existencias}}</h1>
@@ -18,7 +18,8 @@
 </table>
 @endsection
 
-@section('up')
-	@include('tareas.tarea')
+@section('header')
+	@include('partials.header')
 @endsection
+
 

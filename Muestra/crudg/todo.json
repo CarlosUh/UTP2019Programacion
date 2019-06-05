@@ -1,24 +1,24 @@
 {
-	"model_name":"Tarea",
-	"model_namespace":"Utilerias",
-	"controller_namespace":"Utilerias",
-	"route_group":"Utilerias",
-	"pagination":20,
+	"model_name":"Todo",
+	"model_namespace":"Utils",
+	"controller_namespace":"Utils",
+	"route_group":"Utils",
+	"pagination":15,
 	"soft_deletes":"yes",
 	"pk":"id",
 	"localize":"yes",
-	"table":"tareas",
+	"table":"todos",
     "fields": [		
         {
-            "name": "tarea",
+            "name": "name",
             "type": "string"
         },
         {
-            "name": "descripcion",
+            "name": "description",
             "type": "text"
         },
         {
-            "name": "estatus",
+            "name": "status",
             "type": "select",
             "options": {
                 "pendiente": "Pendiente",
@@ -47,11 +47,11 @@
     ],
     "validations": [
         {
-            "field": "tarea",
+            "field": "name",
             "rules": "required|min:5|max:20"
         },
 		{
-            "field": "descripcion",
+            "field": "description",
             "rules": "required|min:5"
         }
     ]
