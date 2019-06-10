@@ -1,0 +1,45 @@
+{
+	"model_name":"Contacto",	
+	"route_group":"personal",
+	"model_namespace":"personal",
+	"controller_namespace":"personal",
+	"pagination":50,
+	"soft_deletes":"yes",
+	"pk":"id",
+	"localize":"yes",
+	"table":"contactos",
+    "fields": [		
+        {
+            "name": "nombre",
+            "type": "string"
+        },
+        {
+            "name": "direccion",
+            "type": "string"
+        },
+		{
+            "name": "correo",
+            "type": "string"
+        },
+        {
+            "name": "genero",
+            "type": "select",
+            "options": {
+                "opcion1": "Hombre",
+                "opcion2": "Mujer",
+				"opcion3": "Sin especificar"
+            }
+        }
+    ],    
+    "validations": [
+        {
+            "field": "nombre",
+            "rules": "required|min:3|max:50"
+        },
+		{
+            "field": "correo",
+            "rules": "required|min:5"
+        }
+    ]
+	
+}
