@@ -1,59 +1,30 @@
 {
-	"model_name":"Tarea",
-	"model_namespace":"Utilerias",
-	"controller_namespace":"Utilerias",
-	"route_group":"Utilerias",
-	"pagination":20,
+	"model_name":"Grupo",
 	"soft_deletes":"yes",
 	"pk":"id",
 	"localize":"yes",
-	"table":"tareas",
+	"table":"grupo",
     "fields": [		
         {
-            "name": "tarea",
+            "name": "nombre",
             "type": "string"
         },
         {
             "name": "descripcion",
             "type": "text"
-        },
-        {
-            "name": "estatus",
-            "type": "select",
-            "options": {
-                "pendiente": "Pendiente",
-                "finalizado": "Finalizado"
-            }
-        },
-        {
-            "name": "user_id",
-            "type": "bigint#unsigned"
-        }
-    ],
-    "foreign_keys": [
-        {
-            "column": "user_id",
-            "references": "id",
-            "on": "users",
-            "onDelete": "cascade"
-        }
-    ],
+        }        
+    ],    
     "relationships": [
         {
-            "name": "user",
-            "type": "belongsTo",
-            "class": "App\\Models\\User"
+            "name": "alumnos",
+            "type": "hasMany",
+            "class": "App\\Models\\Alumno"
         }
     ],
     "validations": [
         {
-            "field": "tarea",
+            "field": "nombre",
             "rules": "required|min:5|max:20"
-        },
-		{
-            "field": "descripcion",
-            "rules": "required|min:5"
         }
     ]
-	
 }

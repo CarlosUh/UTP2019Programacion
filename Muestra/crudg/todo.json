@@ -1,16 +1,12 @@
 {
-	"model_name":"Todo",
-	"model_namespace":"Utils",
-	"controller_namespace":"Utils",
-	"route_group":"Utils",
-	"pagination":15,
+	"model_name":"Alumno",
 	"soft_deletes":"yes",
 	"pk":"id",
 	"localize":"yes",
-	"table":"todos",
+	"table":"alumno",
     "fields": [		
         {
-            "name": "name",
+            "name": "nombre",
             "type": "string"
         },
         {
@@ -18,31 +14,23 @@
             "type": "text"
         },
         {
-            "name": "status",
-            "type": "select",
-            "options": {
-                "pendiente": "Pendiente",
-                "finalizado": "Finalizado"
-            }
-        },
-        {
-            "name": "user_id",
+            "name": "grupo_id",
             "type": "bigint#unsigned"
         }
     ],
     "foreign_keys": [
         {
-            "column": "user_id",
+            "column": "grupo_id",
             "references": "id",
-            "on": "users",
+            "on": "grupo",
             "onDelete": "cascade"
         }
     ],
     "relationships": [
         {
-            "name": "user",
+            "name": "grupo",
             "type": "belongsTo",
-            "class": "App\\Models\\User"
+            "class": "App\\Models\\Grupo"
         }
     ],
     "validations": [

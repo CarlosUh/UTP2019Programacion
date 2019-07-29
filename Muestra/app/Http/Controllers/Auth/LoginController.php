@@ -30,7 +30,7 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
-        return view('adminlte::auth.login');
+        return view('Login');
     }
 
     /**
@@ -38,7 +38,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/tarea/form';
 
     /**
      * Create a new controller instance.

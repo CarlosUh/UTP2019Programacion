@@ -37,7 +37,12 @@ Instalacion de Laravel CRUD Generator
 	
 * Utilizar Crud Generator
 	- Crear archivo json en crudg/tareas.json
-	- php artisan crud:generate Tareas --fields_from_file="crudg/tareas.json"  --form-helper=html
+	- php artisan crud:generate Contactos --fields_from_file="crudg/contacto.json"  --form-helper=html
 	- php artisan migrate
 
 
+
+	
+	
+	
+	

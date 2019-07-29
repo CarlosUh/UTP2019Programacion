@@ -10,25 +10,24 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'TareaController@mostrar')
-	->name("home");
+
 Route::get('/tarea/form', 'TareaController@form')
 	->name("tarea.formulario");
 Route::get('/tareas/nuevo', 'TareaController@guardar')
 	->name("tarea.guardar");
 	
 Route::get('/b', function () {
-    return view('welcome');
+    return view('Login');
 });
 
 Route::group(['middleware' => 'auth'], function () {
     //    Route::get('/link1', function ()    {
 //        // Uses Auth Middleware
 //    });
-
+	Route::get('/', 'TareaController@mostrar')
+	->name("home");
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_routes
 });
 
 Route::resource('tareas', 'TareasController');
-Route::resource('Utils/todos', 'Utils\TodosController');
