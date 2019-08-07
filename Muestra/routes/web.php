@@ -10,12 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::group(['middleware' => 'readwrite'], function () {
 Route::get('/tarea/form', 'TareaController@form')
 	->name("tarea.formulario");
-Route::get('/tareas/nuevo', 'TareaController@guardar')
+Route::post('/tareas/nuevo', 'TareaController@guardar')
 	->name("tarea.guardar");
-	
+});
+
 Route::get('/b', function () {
     return view('Login');
 });

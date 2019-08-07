@@ -6,20 +6,19 @@ use App\Models\Demo\Tarea;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class TareaController extends Controller
 {
 	
 	public function mostrar(Request $request){
 		if(isset($request->filtro)){
-			$user=DB::table('users')
-			->where("id","=",$request->filtro)
-			->first();
+			$user=User::find($request->filtro);
 		}else{
 			$user=Auth::user();
 		}
 		
-		$usuarios=DB::table('users')->distinct()->get();
+		$usuarios=User::All();	
 		$cantidad=Tarea::
 			where('usuario', $user->email)
 			->count();
@@ -47,6 +46,13 @@ class TareaController extends Controller
 			$tarea->description=$request->description;
 			$tarea->estatus=$request->estatus;
 			$tarea->usuario=$user->email;
+			if($request->hasFile('archivo')){
+				$nombreArchivo=$request->archivo
+					->store('imagenes');
+				$tarea->imagen=$nombreArchivo;
+			}else{
+				$tarea->imagen='public/noimagen.jpg';
+			}
 			//Auth::id();			
 			$tarea->save();
 			return redirect()->route("home");
