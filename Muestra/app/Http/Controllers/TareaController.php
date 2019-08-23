@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use App\Models\Demo\Tarea;
 use App\Http\Controllers\Controller;
@@ -50,6 +51,8 @@ class TareaController extends Controller
 				$nombreArchivo=$request->archivo
 					->store('imagenes');
 				$tarea->imagen=$nombreArchivo;
+				$tarea->description=$request
+				->archivo->getClientOriginalExtension();
 			}else{
 				$tarea->imagen='public/noimagen.jpg';
 			}
@@ -59,4 +62,18 @@ class TareaController extends Controller
 		}
 		return redirect()->route("login");
 	}
+
+	public function ver(Request $request){
+		$idTarea=$request->id;
+		$tarea=Tarea::find($idTarea);
+		return Storage::download(
+			$tarea->imagen, 
+			'logo.'.$tarea->descripcion,
+			['Content-Disposition'=>'inline']);
+	}
 }
+
+
+
+
+

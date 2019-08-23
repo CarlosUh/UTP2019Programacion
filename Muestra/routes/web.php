@@ -21,6 +21,9 @@ Route::get('/b', function () {
     return view('Login');
 });
 
+Route::get('/ver', 
+'TareaController@ver');
+
 Route::group(['middleware' => 'auth'], function () {
     //    Route::get('/link1', function ()    {
 //        // Uses Auth Middleware

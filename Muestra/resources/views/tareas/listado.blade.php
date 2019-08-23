@@ -17,6 +17,7 @@
     <th>Descripcion</th> 
     <th>Estatus</th>
 	<th>Usuario</th>
+	<th>Imagen</th>
   </tr>
   @foreach($tareas as $tarea)
   <tr>
@@ -24,6 +25,7 @@
     <td>{{$tarea->description}}</td> 
     <td>{{$tarea->estatus}}</td>
 	<td>{{$tarea->usuario}}</td>
+	<td><img src="/ver?id={{$tarea->tareaid}}" alt="Sin imagen"/> </td>
   </tr>
   @endforeach
 </table>
