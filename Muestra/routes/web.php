@@ -15,6 +15,8 @@ Route::get('/tarea/form', 'TareaController@form')
 	->name("tarea.formulario");
 Route::post('/tareas/nuevo', 'TareaController@guardar')
 	->name("tarea.guardar");
+Route::get('/usuarios', 'UsuarioController@index');
+Route::post('/usuarios', 'UsuarioController@reestablecer');
 });
 
 Route::get('/b', function () {
