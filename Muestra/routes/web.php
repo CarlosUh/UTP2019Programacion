@@ -23,6 +23,8 @@ Route::get('/b', function () {
     return view('Login');
 });
 
+
+
 Route::get('/ver', 
 'TareaController@ver');
 

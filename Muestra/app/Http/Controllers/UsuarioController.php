@@ -26,6 +26,35 @@ class UsuarioController extends Controller
         $usuario=User::find($request->id);
 		$usuario->api_token=Str::random(60);
 		$usuario->update();
-        return index($request);
+        return $this->index($request);
+    }
+	
+	public function todos()
+    {
+        $usuarios=User::All();
+        return response()->json($usuarios);
+    }
+	
+	public function editar($id, Request $request)
+    {
+        $usuario=User::find($id);
+		$usuario->name=$request->name;
+		$usuario->update();
+        return response()->json($usuario);
+    }
+	
+	public function consulta($id)
+    {
+        $usuario=User::find($id);
+        return response()->json($usuario);
     }
 }
+
+
+
+
+
+
+
+
+
