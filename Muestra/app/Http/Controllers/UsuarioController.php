@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UsuarioController extends Controller
 {
@@ -24,9 +25,10 @@ class UsuarioController extends Controller
 	public function reestablecer(Request $request)
     {
         $usuario=User::find($request->id);
-		$usuario->api_token=Str::random(60);
+		$token=Str::random(60);
+		$usuario->api_token=hash('sha256',$token);
 		$usuario->update();
-        return $this->index($request);
+        return view('usuarios.token', compact('token'));
     }
 	
 	public function todos()
