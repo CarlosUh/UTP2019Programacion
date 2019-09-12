@@ -8,6 +8,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+//composer require guzzlehttp/guzzle
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Exception\RequestException;
 
 class TareaController extends Controller
 {
@@ -58,6 +62,24 @@ class TareaController extends Controller
 			}
 			//Auth::id();			
 			$tarea->save();
+			if(!$request->has('soa')){
+				try{
+					$cliente=new Client();
+					$respuesta=$cliente
+					->post("http://IP:Puerto/ruta/a/controlador",
+					[
+						'form_params'=>[
+							'api_token'=>'token',
+							'name'=>$request->name,
+							'descripcion'=>$request->description,
+							'estatus'=>$request->estatus,
+							'soa'=>true
+										]
+					]);
+				}catch(RequestException $e){
+					var_dump($e);
+				}
+			}
 			return redirect()->route("home");
 		}
 		return redirect()->route("login");

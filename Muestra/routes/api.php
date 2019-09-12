@@ -28,7 +28,7 @@ Route::group(['middleware' => 'auth:api'], function () {
 	Route::post('/todos', 'UsuarioController@todos');
 	Route::get('/todos/{id}', 'UsuarioController@consulta');
 	Route::post('/todos/{id}', 'UsuarioController@editar');
-	
+	Route::post('/tareas/nuevo', 'TareaController@guardar');
 	
 });
 
