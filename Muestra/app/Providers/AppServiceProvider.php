@@ -29,5 +29,7 @@ class AppServiceProvider extends ServiceProvider
             $this->app->register(DuskServiceProvider::class);
 			Schema::defaultStringLength(191);
         }
-    }	
+		$this->app->bind('App\Contracts\IOperaciones', 'App\Http\Controllers\Services\OperacionesService');
+    }
+	
 }
