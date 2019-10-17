@@ -30,6 +30,20 @@ class AppServiceProvider extends ServiceProvider
 			Schema::defaultStringLength(191);
         }
 		$this->app->bind('App\Contracts\IOperaciones', 'App\Http\Controllers\Services\OperacionesService');
+		$this->app->bind('App\Contracts\IProductSearchable', 
+			'App\Http\Controllers\Services\MockProductoSearchableService');
     }
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
